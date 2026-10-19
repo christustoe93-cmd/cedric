@@ -1,0 +1,457 @@
+/* =========================================
+   1. PARAMÈTRES GÉNÉRAUX
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #de2510, #414345);
+    color: #ffffff;
+    background-attachment: fixed;
+}
+
+/* =========================================
+   2. EN-TÊTE ET NAVIGATION
+   ========================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 5%;
+    background-color: rgba(13, 199, 94, 0.75);
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e32626;
+}
+
+/* =========================================
+   3. TITRES
+   ========================================= */
+
+h1,
+h2 {
+    font-family: "Lobster", cursive;
+    color: rgb(214, 20, 20);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+/* =========================================
+   4. PARAGRAPHES ET LISTES
+   ========================================= */
+
+p,
+ul {
+    color: #f1f1f1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+p {
+    font-style: italic;
+    text-align: left;
+}
+
+ul {
+    padding-left: 30px;
+}
+
+/* =========================================
+   5. SECTION PRINCIPALE
+   ========================================= */
+
+.hero {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.bouton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background-color: #b91515;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.bouton:hover {
+    background-color: #e32626;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   6. SECTION SERVICES
+   ========================================= */
+
+.services {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.services h2 {
+    text-align: center;
+}
+
+.services ul {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.services li {
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   7. SECTION GALERIE
+   ========================================= */
+
+.galerie {
+    width: 100%;
+    padding: 30px 15px;
+}
+
+.galerie h2 {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Grille de cinq colonnes sur ordinateur */
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+/* Conteneur de chaque photo */
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #232526;
+    aspect-ratio: 1 / 1;
+}
+
+/* Images */
+
+.photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+/* Zoom de l'image au survol */
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+/* =========================================
+   8. BOUTON DE TÉLÉCHARGEMENT
+   ========================================= */
+
+.telecharger {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
+    display: inline-block;
+    padding: 10px 12px;
+
+    background-color: #b91515;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, 10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 2;
+}
+
+/* Afficher le bouton lorsque la souris survole la photo */
+
+.photo:hover .telecharger {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* Afficher le bouton lorsque le lien reçoit le focus */
+
+.photo:focus-within .telecharger {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* Apparence du bouton au survol */
+
+.telecharger:hover {
+    background-color: #e32626;
+    color: #ffffff;
+}
+
+/* =========================================
+   9. SECTION CONTACT
+   ========================================= */
+
+.contact {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.contact p {
+    text-align: center;
+}
+
+.contact a {
+    color: #ff5555;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* =========================================
+   10. PIED DE PAGE
+   ========================================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 25px 5%;
+    margin-top: 40px;
+
+    background-color: rgba(220, 15, 15, 0.75);
+}
+
+footer img {
+    max-width: 150px;
+    height: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    display: inline-block;
+    margin: 5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e32626;
+}
+
+footer a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/* =========================================
+   11. TABLETTES
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    p,
+    ul {
+        font-size: 16px;
+    }
+
+    /* Deux colonnes sur tablette */
+
+    .photos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* Bouton toujours visible sur écran tactile */
+
+    .telecharger {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    footer {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   12. TÉLÉPHONES
+   ========================================= */
+
+@media screen and (max-width: 480px) {
+
+    header {
+        padding: 15px;
+    }
+
+    header img {
+        max-width: 120px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .hero {
+        margin: 20px auto;
+        padding: 20px 15px;
+    }
+
+    /* Une seule colonne sur téléphone */
+
+    .photos {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .photo {
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Bouton de téléchargement visible sur téléphone */
+
+    .telecharger {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .services,
+    .contact {
+        padding: 20px 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
